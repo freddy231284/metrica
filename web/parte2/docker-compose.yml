@@ -6,33 +6,17 @@ networks:
             name: core_core
 
 services:
-    webClient:
-        build:
-            context: ./webClient
-            dockerfile: ./docker/Dockerfile
-        image: redbus/factura_web
-        ports:
-            - '11003:80'
-        volumes:
-            - ./webClient:/srv/app
-        external_links:
-            - xml
-            - pdf
-        networks:
-            - core
 
     webAdmin:
         build:
             context: ./webAdmin
             dockerfile: ./docker/Dockerfile
-        image: redbus/factura_admin
         ports:
             - '11004:80'
         volumes:
             - ./webAdmin:/srv/app
         external_links:
             - xml
-            - pdf
         networks:
             - core
 

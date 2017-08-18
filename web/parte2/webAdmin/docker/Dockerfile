@@ -1,4 +1,4 @@
-FROM redbus/php:7-apache
+FROM php:7-apache
 
 # Install packages
 RUN apt-get update && apt-get install --no-install-recommends -y \
