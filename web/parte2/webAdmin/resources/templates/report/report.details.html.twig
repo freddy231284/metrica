@@ -1,0 +1,27 @@
+{% extends "index.html.twig" %}
+{% block content %}
+    <form id="generate_report" action="#" method="POST">
+
+        <div class="col-md-6">
+
+        </div>
+        <div class="col-md-6 btn-group" role="group" aria-label="Basic Button group">
+
+        </div>
+    </form>
+    <p class="clearfix">&nbsp</p>
+    <div id="report_generate_msg" class="row col-md-12">
+        <div><h3>DETAILS:</h3></div>
+        <div class="col-md-12 btn-group" role="group" aria-label="Basic Button group">
+
+            <label>Name:</label> {{ data.name }}<br>
+            <label>Email:</label> {{ data.email }}<br>
+            <label>Phone:</label> {{ data.phone }}<br>
+            <label>Address:</label> {{ data.address }}<br>
+            <label>Position:</label> {{ data.position }}<br>
+            <label>Salary:</label> {{ data.salary }}<br>
+            <label>Skills:</label> {{ data.skills.skill }}<br>
+
+        </div>
+    </div>
+{% endblock %}

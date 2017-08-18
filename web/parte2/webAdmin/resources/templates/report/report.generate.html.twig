@@ -1,0 +1,47 @@
+{% extends "index.html.twig" %}
+{% block content %}
+    <form id="generate_report" action="#" method="POST">
+
+        <div class="col-md-6">
+
+            {{ form_errors(form.type) }}
+            {{ form_widget(form.type) }}
+
+        </div>
+        <div class="col-md-6 btn-group" role="group" aria-label="Basic Button group">
+            {{ form_widget(form.generate) }}
+        </div>
+    </form>
+    <p class="clearfix">&nbsp</p>
+    <div id="report_generate_msg" class="row col-md-12">
+        <div><label>Employees:</label></div>
+        <div class="col-md-12 btn-group" role="group" aria-label="Basic Button group">
+
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>name</th>
+                    <th>email</th>
+                    <th>Position</th>
+                    <th>Salary</th>
+                    <th>Details</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for key, value in employees %}
+                    <tr>
+                        <th scope="row">{{ key +1 }}</th>
+                        <td>{{ value.name }}</td>
+                        <td>{{ value.email }}</td>
+                        <td>{{ value.position }}</td>
+                        <td>{{ value.salary }}</td>
+                        <td><a href="./details/{{ value.id }}">Details</a></td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+{% endblock %}

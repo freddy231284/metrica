@@ -1,0 +1,19 @@
+# temp files
+*~
+*.swp
+*.bkp
+*.orig
+ 
+# PHP
+composer.phar
+.composer/
+/vendor/
+ 
+# IDEs
+/.idea/
+.phpstorm.meta.php/
+nbproject/
+
+#temp files
+*/logs/*
+/cache/*

@@ -1,0 +1,35 @@
+{
+  "name": "redbus/factura_worker",
+  "license": "proprietary",
+  "type": "project",
+  "minimum-stability": "stable",
+  "require": {
+    "silex/silex": "~2.0",
+    "symfony/serializer": "^3.2",
+    "symfony/validator": "^3.2",
+    "guzzlehttp/guzzle": "^6.2",
+    "symfony/yaml": "^3.2",
+    "symfony/property-access": "^3.2",
+    "monolog/monolog": "^1.22",
+    "twig/twig": "^2.1",
+    "symfony/form": "^3.2",
+    "symfony/twig-bridge": "^3.2",
+    "symfony/asset": "^3.2",
+    "twbs/bootstrap": "^3.3",
+    "jms/serializer": "^1.5",
+    "symfony/console": "^3.2",
+    "symfony/translation": "^3.2",
+    "symfony/config": "^3.2",
+  },
+  "require-dev": {
+    "symfony/var-dumper": "^3.2",
+    "wsdl2phpgenerator/wsdl2phpgenerator": "^3.4",
+    "symfony/browser-kit": "^3.2",
+    "phpunit/phpunit": "~4.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    }
+  }
+}

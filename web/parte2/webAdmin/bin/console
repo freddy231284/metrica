@@ -1,0 +1,24 @@
+#!/usr/bin/env php
+<?php
+require __DIR__.'/../vendor/autoload.php';
+
+use Symfony\Component\Console\Application;
+use App\Command\SunatWSDLGenerateCommand;
+use App\Command\MergeValidationFiles;
+use App\Command\GenerateSummaryCommand;
+use App\Command\GenerateVoidedCommand;
+
+$application = new Application();
+
+$application->add(new SunatWSDLGenerateCommand());
+$application->add(new MergeValidationFiles());
+
+//Add Silex Application
+$app = require __DIR__.'/../src/app.php';
+require __DIR__.'/../config/prod.php';
+
+//Summary and Voided Reports to run using cron jobs
+$application->add(new GenerateSummaryCommand($app));
+$application->add(new GenerateVoidedCommand($app));
+
+$application->run();
